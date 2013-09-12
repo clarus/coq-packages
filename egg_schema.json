@@ -1,0 +1,78 @@
+{
+  "title": "Egg package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["egg-version", "url", "checksum"],
+  "properties": {
+    "egg-version": {
+      "description": "Version of the eggs manager (should be 1)",
+      "type": "integer"
+    },
+    "info": {
+      "description": "Short description",
+      "type": "string"
+    },
+    "authors": {
+      "description": "List of authors",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tags": {
+      "description": "List of tags",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "maintainer": {
+      "description": "Maintainer of the package",
+      "type": "string"
+    },
+    "homepage": {
+      "description": "Homepage of the project",
+      "type": "string"
+    },
+    "bugs": {
+      "description": "Bug reports page",
+      "type": "string"
+    },
+    "url": {
+      "description": "Download link",
+      "type": "string"
+    },
+    "checksum": {
+      "description": "md5 sum of the package",
+      "type": "string"
+    },
+    "licenses": {
+      "description": "List of licenses",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      }
+    },
+    "dependencies": {
+      "description": "List of dependencies",
+      "type": "object",
+      "patternProperties": {
+        "": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "build": {
+      "description": "List of build commands",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "remove": {
+      "description": "List of remove commands",
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
